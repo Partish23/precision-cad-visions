@@ -28,11 +28,11 @@ const About = () => {
     <div className="min-h-screen bg-black text-white">
       <Navigation />
       
-      {/* Background with enhanced gradient */}
+      {/* Background with reduced glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#c4ff0d] opacity-8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-green-400 opacity-6 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-[#c4ff0d] opacity-4 rounded-full blur-2xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#c4ff0d] opacity-[0.15] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-green-400 opacity-[0.15] rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 right-1/3 w-48 h-48 bg-[#c4ff0d] opacity-[0.15] rounded-full blur-2xl"></div>
       </div>
 
       <div className="relative z-10 pt-24 pb-16 px-6">
@@ -58,7 +58,7 @@ const About = () => {
 
           {/* Education Timeline */}
           <div className="mb-20">
-            <h2 className="text-3xl font-bold mb-12 text-center">
+            <h2 className="text-4xl md:text-6xl font-bold mb-12 text-center">
               Educational <span className="text-[#c4ff0d]">Journey</span>
             </h2>
             
