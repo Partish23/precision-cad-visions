@@ -61,18 +61,15 @@ const About = () => {
             </h2>
             
             <div ref={timelineRef} className="relative">
-              {/* Timeline Line */}
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#c4ff0d] via-green-400 to-[#c4ff0d] opacity-60"></div>
-              
               {/* Timeline Items */}
               <div className="space-y-12">
                 {/* Current Education */}
                 <div className="timeline-item opacity-0 translate-y-8 transition-all duration-700">
                   <div className="flex items-start gap-6">
-                    <div className="relative z-10 w-16 h-16 bg-[#c4ff0d] rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="relative z-10 w-16 h-16 bg-[#c4ff0d] rounded-full flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#c4ff0d]/30">
                       <GraduationCap className="text-black" size={24} />
                     </div>
-                    <div className="flex-1 bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-[#c4ff0d] hover:border-opacity-50 transition-all duration-300">
+                    <div className="flex-1 bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-[#c4ff0d] hover:border-opacity-50 transition-all duration-300 hover:shadow-lg hover:shadow-[#c4ff0d]/10">
                       <div className="flex items-center gap-3 mb-2">
                         <span className="text-[#c4ff0d] font-bold text-sm">2022 – Present</span>
                       </div>
@@ -88,10 +85,10 @@ const About = () => {
                 {/* Diploma */}
                 <div className="timeline-item opacity-0 translate-y-8 transition-all duration-700">
                   <div className="flex items-start gap-6">
-                    <div className="relative z-10 w-16 h-16 bg-green-400 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="relative z-10 w-16 h-16 bg-green-400 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg shadow-green-400/30">
                       <Settings className="text-black" size={24} />
                     </div>
-                    <div className="flex-1 bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-[#c4ff0d] hover:border-opacity-50 transition-all duration-300">
+                    <div className="flex-1 bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-[#c4ff0d] hover:border-opacity-50 transition-all duration-300 hover:shadow-lg hover:shadow-[#c4ff0d]/10">
                       <div className="flex items-center gap-3 mb-2">
                         <span className="text-[#c4ff0d] font-bold text-sm">2019 – 2022</span>
                       </div>
@@ -107,10 +104,10 @@ const About = () => {
                 {/* High School */}
                 <div className="timeline-item opacity-0 translate-y-8 transition-all duration-700">
                   <div className="flex items-start gap-6">
-                    <div className="relative z-10 w-16 h-16 bg-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="relative z-10 w-16 h-16 bg-blue-400 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-400/30">
                       <GraduationCap className="text-black" size={24} />
                     </div>
-                    <div className="flex-1 bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-[#c4ff0d] hover:border-opacity-50 transition-all duration-300">
+                    <div className="flex-1 bg-gray-900 rounded-lg p-6 border border-gray-700 hover:border-[#c4ff0d] hover:border-opacity-50 transition-all duration-300 hover:shadow-lg hover:shadow-[#c4ff0d]/10">
                       <div className="flex items-center gap-3 mb-2">
                         <span className="text-[#c4ff0d] font-bold text-sm">2009 – 2019</span>
                       </div>

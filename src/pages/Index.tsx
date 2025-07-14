@@ -19,8 +19,8 @@ const Index = () => {
       {/* Hero Section */}
       <div className="relative z-10 min-h-screen flex items-center justify-center px-6">
         <div className="max-w-6xl mx-auto text-center">
-          {/* Main Name */}
-          <h1 className="text-6xl md:text-8xl font-bold mb-4 tracking-tight">
+          {/* Main Name - Reduced by 25% */}
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 tracking-tight">
             PARTISH PEDNEKAR
           </h1>
           
