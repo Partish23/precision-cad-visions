@@ -11,9 +11,9 @@ const Index = () => {
       <Navigation />
       
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#c4ff0d] opacity-5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-green-400 opacity-5 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-green-900 via-black to-emerald-900">
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#c4ff0d] opacity-15 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-emerald-400 opacity-15 rounded-full blur-3xl"></div>
       </div>
 
       {/* Hero Section */}
