@@ -49,7 +49,7 @@ const About = () => {
             <div className="bg-gray-900/80 backdrop-blur-sm border border-[#c4ff0d] border-opacity-30 rounded-lg p-8 mb-8 hover:border-opacity-60 transition-all duration-300 hover:shadow-lg hover:shadow-[#c4ff0d]/10">
               <h2 className="text-2xl font-bold mb-6 text-[#c4ff0d]">About Myself</h2>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Passionate about 3D modeling and turning ideas into precise, manufacturable products. 
+                Passionate about 3D View modeling and turning ideas into precise, manufacturable products. 
                 Enthusiastic about learning new tools and techniques to solve real-world engineering problems 
                 and contribute to efficient, innovative solutions.
               </p>
