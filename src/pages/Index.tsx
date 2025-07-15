@@ -44,7 +44,7 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link 
             to="/projects"
-            className="inline-flex items-center gap-2 font-medium glow-text transition-all"
+            className="inline-flex items-center gap-2 text-[#c4ff0d] hover:text-white transition-colors font-medium"
             >
             View All Projects <ChevronRight size={20} />
             </Link>
@@ -92,11 +92,11 @@ const Index = () => {
           
           <div className="text-center mt-12">
             <Link 
-              to="/projects"
-              className="inline-flex items-center gap-2 text-[#c4ff0d] hover:text-white transition-colors font-medium"
+            to="/projects"
+            className="inline-flex items-center gap-2 font-medium glow-text transition-all"
             >
-              View All Projects <ChevronRight size={20} />
-            </Link>
+            View All Projects <ChevronRight size={20} />
+          </Link>
           </div>
         </div>
       </div>
