@@ -50,7 +50,7 @@ export const projects: Project[] = [
         '/drafting/gear-assembly-specs.pdf'
       ],
       videos: [
-        '/videos/gear-assembly-demo.mp4',
+        '/videos/CH-ASSEMBLY.mp4',
         '/videos/gear-assembly-animation.mp4'
       ]
     }
