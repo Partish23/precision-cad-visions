@@ -3,66 +3,14 @@ import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import { ChevronRight, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { projects, getProjectsByCategory } from '../lib/projects';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   
   const filters = ['All', 'Mechanical Assembly', 'Mechanical Part'];
-  
-  const projects = [
-    {
-      id: 1,
-      title: 'Industrial Gear Assembly',
-      category: 'Mechanical Assembly',
-      description: 'Complete gear train assembly with precision tolerances',
-      image: '/api/placeholder/400/300',
-      tags: ['SolidWorks', 'Assembly', 'Gears']
-    },
-    {
-      id: 2,
-      title: 'Hydraulic Cylinder Design',
-      category: 'Mechanical Part',
-      description: 'High-pressure hydraulic cylinder with custom sealing',
-      image: '/api/placeholder/400/300',
-      tags: ['AutoCAD', 'Hydraulics', 'Manufacturing']
-    },
-    {
-      id: 3,
-      title: 'Automotive Suspension System',
-      category: 'Mechanical Assembly',
-      description: 'Independent suspension system for performance vehicles',
-      image: '/api/placeholder/400/300',
-      tags: ['Fusion 360', 'Automotive', 'Dynamics']
-    },
-    {
-      id: 4,
-      title: 'Precision Bearing Housing',
-      category: 'Mechanical Part',
-      description: 'Custom bearing housing with integrated lubrication system',
-      image: '/api/placeholder/400/300',
-      tags: ['SolidWorks', 'Precision', 'Machining']
-    },
-    {
-      id: 5,
-      title: 'Robotic Arm Joint',
-      category: 'Mechanical Assembly',
-      description: 'Multi-axis robotic joint with servo integration',
-      image: '/api/placeholder/400/300',
-      tags: ['Fusion 360', 'Robotics', 'Automation']
-    },
-    {
-      id: 6,
-      title: 'Custom Valve Body',
-      category: 'Mechanical Part',
-      description: 'High-flow valve body for industrial applications',
-      image: '/api/placeholder/400/300',
-      tags: ['AutoCAD', 'Fluid Systems', 'Industrial']
-    }
-  ];
 
-  const filteredProjects = activeFilter === 'All' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
+  const filteredProjects = getProjectsByCategory(activeFilter);
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -116,9 +64,22 @@ const Projects = () => {
                 }}
               >
                 {/* Project Image */}
-                <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center relative overflow-hidden">
-                  <div className="w-20 h-20 border-2 border-[#c4ff0d] rounded-lg flex items-center justify-center">
-                    <span className="text-[#c4ff0d] font-bold text-lg">CAD</span>
+                <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-700 relative overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    onError={(e) => {
+                      // Fallback to placeholder if image fails to load
+                      e.currentTarget.style.display = 'none';
+                      const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                  <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-700 hidden items-center justify-center">
+                    <div className="w-20 h-20 border-2 border-[#c4ff0d] rounded-lg flex items-center justify-center">
+                      <span className="text-[#c4ff0d] font-bold text-lg">CAD</span>
+                    </div>
                   </div>
                   <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <Link

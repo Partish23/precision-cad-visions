@@ -1,77 +1,125 @@
-
-import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import { ArrowLeft, Download, ExternalLink, Play, Image, FileText, Box } from 'lucide-react';
+import { getProjectById, Project } from '../lib/projects';
 
 const ProjectDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const [project, setProject] = useState<Project | null>(null);
   const [activeTab, setActiveTab] = useState('3D View');
   
   const tabs = ['3D View', 'Images', 'Video', 'Drafting'];
-  
-  // Mock project data - in a real app, you'd fetch this based on the ID
-  const project = {
-    id: 1,
-    title: 'Industrial Gear Assembly',
-    category: 'Mechanical Assembly',
-    description: 'A comprehensive gear train assembly designed for high-torque industrial applications. This project showcases precision engineering with custom gear ratios, bearing integration, and optimized material selection for maximum efficiency and durability.',
-    longDescription: 'This industrial gear assembly represents a complete solution for power transmission in heavy machinery applications. The design incorporates advanced geometric modeling techniques, stress analysis optimization, and manufacturing-ready specifications. Each component has been carefully designed to meet strict tolerance requirements while maintaining cost-effective production methods.',
-    software: ['SolidWorks', 'AutoCAD', 'ANSYS'],
-    tags: ['Assembly Design', 'Gear Systems', 'Industrial', 'Manufacturing'],
-    specifications: {
-      'Gear Ratio': '4:1 Reduction',
-      'Torque Capacity': '2500 Nm',
-      'Material': 'AISI 4140 Steel',
-      'Precision Grade': 'DIN 6 Quality'
+
+  useEffect(() => {
+    if (id) {
+      const projectId = parseInt(id, 10);
+      const foundProject = getProjectById(projectId);
+      if (foundProject) {
+        setProject(foundProject);
+      } else {
+        navigate('/notfound');
+      }
     }
-  };
+  }, [id, navigate]);
+  
+  if (!project) {
+    return (
+      <div className="min-h-screen bg-black text-white flex items-center justify-center">
+        <div className="text-center">
+          <p>Loading project...</p>
+        </div>
+      </div>
+    );
+  }
 
   const renderTabContent = () => {
     switch (activeTab) {
       case '3D View':
         return (
-          <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg flex items-center justify-center">
-            <div className="text-center">
-              <Box className="mx-auto mb-4 text-[#c4ff0d]" size={64} />
-              <h3 className="text-xl font-semibold mb-2">3D CAD Model</h3>
-              <p className="text-gray-400">Interactive 3D model would be embedded here</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {project.gallery?.['3d-views']?.length ? (
+              project.gallery['3d-views'].map((view, index) => (
+                <div key={index} className="aspect-video bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg overflow-hidden">
+                  <img src={view} alt={`${project.title} - 3D View ${index + 1}`} className="w-full h-full object-cover" />
+                </div>
+              ))
+            ) : (
+              <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg flex items-center justify-center col-span-full">
+                <div className="text-center">
+                  <Box className="mx-auto mb-4 text-[#c4ff0d]" size={64} />
+                  <h3 className="text-xl font-semibold mb-2">No 3D Views Available</h3>
+                  <p className="text-gray-400">This project does not have any 3D views in the gallery.</p>
+                </div>
+              </div>
+            )}
           </div>
         );
       case 'Images':
         return (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="aspect-video bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg flex items-center justify-center">
+            {project.gallery?.images?.length ? (
+              project.gallery.images.map((image, index) => (
+                <div key={index} className="aspect-video bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg overflow-hidden">
+                  <img src={image} alt={`${project.title} - Image ${index + 1}`} className="w-full h-full object-cover" />
+                </div>
+              ))
+            ) : (
+              <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg flex items-center justify-center col-span-full">
                 <div className="text-center">
-                  <Image className="mx-auto mb-2 text-[#c4ff0d]" size={32} />
-                  <p className="text-gray-400 text-sm">Technical Drawing {i}</p>
+                  <Image className="mx-auto mb-4 text-[#c4ff0d]" size={64} />
+                  <h3 className="text-xl font-semibold mb-2">No Images Available</h3>
+                  <p className="text-gray-400">This project does not have any images in the gallery.</p>
                 </div>
               </div>
-            ))}
+            )}
           </div>
         );
       case 'Video':
         return (
-          <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-[#c4ff0d] rounded-full flex items-center justify-center mb-4 mx-auto">
-                <Play className="text-black ml-1" size={32} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {project.gallery?.videos?.length ? (
+              project.gallery.videos.map((video, index) => (
+                <div key={index} className="aspect-video bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg overflow-hidden">
+                  <video controls src={video} className="w-full h-full object-cover" />
+                </div>
+              ))
+            ) : (
+              <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg flex items-center justify-center col-span-full">
+                <div className="text-center">
+                  <Play className="mx-auto mb-4 text-[#c4ff0d]" size={64} />
+                  <h3 className="text-xl font-semibold mb-2">No Videos Available</h3>
+                  <p className="text-gray-400">This project does not have any videos in the gallery.</p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Assembly Animation</h3>
-              <p className="text-gray-400">Step-by-step assembly process video</p>
-            </div>
+            )}
           </div>
         );
       case 'Drafting':
         return (
-          <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg flex items-center justify-center">
-            <div className="text-center">
-              <FileText className="mx-auto mb-4 text-[#c4ff0d]" size={64} />
-              <h3 className="text-xl font-semibold mb-2">Technical Drawings</h3>
-              <p className="text-gray-400">Detailed engineering drawings and specifications</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {project.gallery?.drafting?.length ? (
+              project.gallery.drafting.map((doc, index) => (
+                <div key={index} className="aspect-video bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg flex items-center justify-center">
+                  <div className="text-center">
+                    <FileText className="mx-auto mb-4 text-[#c4ff0d]" size={64} />
+                    <h3 className="text-xl font-semibold mb-2">Drafting Document</h3>
+                    <a href={doc} target="_blank" rel="noopener noreferrer" className="text-[#c4ff0d] hover:underline">
+                      View Document {index + 1}
+                    </a>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg flex items-center justify-center col-span-full">
+                <div className="text-center">
+                  <FileText className="mx-auto mb-4 text-[#c4ff0d]" size={64} />
+                  <h3 className="text-xl font-semibold mb-2">No Drafting Documents Available</h3>
+                  <p className="text-gray-400">This project does not have any drafting documents in the gallery.</p>
+                </div>
+              </div>
+            )}
           </div>
         );
       default:
