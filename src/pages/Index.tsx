@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import Navigation from '../components/Navigation';
-import { ArrowDown, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -62,10 +62,10 @@ const Index = () => {
           {/* CTA Buttons */}
           <div className="fade-in-element opacity-0 translate-y-8 transition-all duration-700 flex flex-col sm:flex-row gap-4 justify-center items-center" style={{ animationDelay: '0.4s' }}>
             <Link 
-            to="/projects"
-            className="inline-flex items-center gap-2 font-medium glow-text transition-all"
+              to="/projects"
+              className="bg-[#c4ff0d] text-black px-8 py-4 rounded-full font-medium hover:bg-[#a8d60a] transition-all duration-300 inline-flex items-center gap-2"
             >
-            View All Projects <ChevronRight size={20} />
+              View All Projects <ChevronRight size={20} />
             </Link>
             <Link 
               to="/about"
@@ -75,11 +75,6 @@ const Index = () => {
             </Link>
           </div>
         </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="fade-in-element opacity-0 translate-y-8 transition-all duration-700 absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 animate-bounce" style={{ animationDelay: '0.5s' }}>
-        <ArrowDown size={24} />
       </div>
 
       {/* Featured Projects Preview */}
@@ -107,15 +102,6 @@ const Index = () => {
                 <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#c4ff0d] rounded-lg transition-colors"></div>
               </div>
             ))}
-          </div>
-          
-          <div className="fade-in-element opacity-0 translate-y-8 transition-all duration-700 text-center mt-12" style={{ animationDelay: '1.1s' }}>
-            <Link 
-            to="/projects"
-            className="inline-flex items-center gap-2 font-medium glow-text transition-all"
-            >
-            View All Projects <ChevronRight size={20} />
-          </Link>
           </div>
         </div>
       </div>
