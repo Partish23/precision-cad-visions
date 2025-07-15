@@ -43,11 +43,10 @@ const Index = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link 
-              to="/projects"
-              className="group bg-[#c4ff0d] text-black px-8 py-4 rounded-full font-medium hover:bg-[#a8d60a] transition-all duration-300 flex items-center gap-2"
+            to="/projects"
+            className="inline-flex items-center gap-2 font-medium glow-text transition-all"
             >
-              View Projects
-              <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            View All Projects <ChevronRight size={20} />
             </Link>
             <Link 
               to="/about"
