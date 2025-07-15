@@ -162,17 +162,6 @@ const ProjectDetail = () => {
             <p className="text-xl text-gray-400 max-w-4xl leading-relaxed mb-8">
               {project.description}
             </p>
-
-            <div className="flex flex-wrap gap-4">
-              <button className="bg-[#c4ff0d] text-black px-6 py-3 rounded-full font-medium hover:bg-[#a8d60a] transition-colors flex items-center gap-2">
-                <Download size={20} />
-                Download Files
-              </button>
-              <button className="border border-[#c4ff0d] text-[#c4ff0d] px-6 py-3 rounded-full font-medium hover:bg-[#c4ff0d] hover:text-black transition-all duration-300 flex items-center gap-2">
-                <ExternalLink size={20} />
-                View Live Demo
-              </button>
-            </div>
           </div>
 
           {/* Tabs */}
@@ -203,38 +192,16 @@ const ProjectDetail = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Description */}
             <div>
-              <h2 className="text-2xl font-bold mb-6">Project Details</h2>
+              <h2 className="text-2xl font-bold mb-6"></h2>
               <p className="text-gray-300 leading-relaxed mb-6">
-                {project.longDescription}
               </p>
               
               <div className="flex flex-wrap gap-2 mb-6">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-sm text-gray-300 bg-gray-800 px-3 py-1 rounded-full border border-gray-700"
-                  >
-                    {tag}
-                  </span>
-                ))}
               </div>
             </div>
 
             {/* Specifications */}
             <div>
-              <h2 className="text-2xl font-bold mb-6">Specifications</h2>
-              
-              <div className="bg-gray-900 border border-gray-700 rounded-lg p-6 mb-6">
-                <div className="space-y-4">
-                  {Object.entries(project.specifications).map(([key, value]) => (
-                    <div key={key} className="flex justify-between items-center border-b border-gray-700 pb-2">
-                      <span className="text-gray-400">{key}</span>
-                      <span className="font-medium">{value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
                 <h3 className="font-bold mb-4">Software Used</h3>
                 <div className="flex flex-wrap gap-2">

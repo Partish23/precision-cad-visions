@@ -3,12 +3,9 @@ export interface Project {
   title: string;
   category: string;
   description: string;
-  longDescription: string;
   image: string;
   video?: string;
-  tags: string[];
   software: string[];
-  specifications: { [key: string]: string };
   gallery?: {
     images?: string[];
     videos?: string[];
@@ -23,17 +20,9 @@ export const projects: Project[] = [
     title: 'Industrial Gear Assembly',
     category: 'Mechanical Assembly',
     description: 'Complete gear train assembly with precision tolerances',
-    longDescription: 'This industrial gear assembly represents a complete solution for power transmission in heavy machinery applications. The design incorporates advanced geometric modeling techniques, stress analysis optimization, and manufacturing-ready specifications.',
     image: '/images/Picture7.png',
     video: '/videos/gear-assembly-demo.mp4',
-    tags: ['SolidWorks', 'Assembly', 'Gears'],
     software: ['SolidWorks', 'AutoCAD', 'ANSYS'],
-    specifications: {
-      'Gear Ratio': '4:1 Reduction',
-      'Torque Capacity': '2500 Nm',
-      'Material': 'AISI 4140 Steel',
-      'Precision Grade': 'DIN 6 Quality'
-    },
     gallery: {
       images: [
         '/images/Picture7.png',
@@ -60,17 +49,9 @@ export const projects: Project[] = [
     title: 'Hydraulic Cylinder Design',
     category: 'Mechanical Part',
     description: 'High-pressure hydraulic cylinder with custom sealing',
-    longDescription: 'This project involved the design and analysis of a high-pressure hydraulic cylinder for industrial automation. It features a custom sealing solution to prevent leakage under extreme pressures and a robust construction for long service life.',
     image: '/images/hydraulic-cylinder.jpg',
     video: '/videos/hydraulic-cylinder-test.mp4',
-    tags: ['AutoCAD', 'Hydraulics', 'Manufacturing'],
     software: ['AutoCAD', 'ANSYS'],
-    specifications: {
-      'Pressure Rating': '350 bar',
-      'Bore Diameter': '100 mm',
-      'Stroke Length': '500 mm',
-      'Sealing': 'Custom PTFE composite'
-    },
     gallery: {
       images: [
         '/images/Picture6.png',
@@ -95,17 +76,9 @@ export const projects: Project[] = [
     title: 'Automotive Suspension System',
     category: 'Mechanical Assembly',
     description: 'Independent suspension system for performance vehicles',
-    longDescription: 'This project features a double-wishbone suspension system designed for high-performance automotive applications. It includes detailed kinematic analysis and component design for optimal handling and ride comfort.',
     image: '/images/suspension-system.jpg',
     video: '/videos/suspension-dynamics.mp4',
-    tags: ['Fusion 360', 'Automotive', 'Dynamics'],
     software: ['Fusion 360', 'MATLAB'],
-    specifications: {
-      'Type': 'Double Wishbone',
-      'Travel': '150 mm',
-      'Camber Gain': '-2 degrees',
-      'Material': '7075-T6 Aluminum'
-    },
     gallery: {
       images: [
         '/images/suspension-system-1.jpg',
@@ -132,16 +105,8 @@ export const projects: Project[] = [
     title: 'Precision Bearing Housing',
     category: 'Mechanical Part',
     description: 'Custom bearing housing with integrated lubrication system',
-    longDescription: 'This project involved the design of a precision bearing housing that integrates a lubrication system for enhanced performance and longevity. The housing is optimized for minimal friction and maximum load-bearing capacity.',
     image: '/images/bearing-housing.jpg',
-    tags: ['SolidWorks', 'Precision', 'Machining'],
     software: ['SolidWorks', 'AutoCAD'],
-    specifications: {
-      'Inner Diameter': '50 mm',
-      'Outer Diameter': '80 mm',
-      'Width': '40 mm',
-      'Material': 'Cast Iron'
-    },
     gallery: {
       images: [
         '/images/bearing-housing-1.jpg',
@@ -163,17 +128,9 @@ export const projects: Project[] = [
     title: 'Robotic Arm Joint',
     category: 'Mechanical Assembly',
     description: 'Multi-axis robotic joint with servo integration',
-    longDescription: 'This project showcases a multi-axis robotic joint designed for automation and robotics applications. It features integrated servo motors, a compact design, and high-strength materials for precision and reliability.',
     image: '/images/robotic-joint.jpg',
     video: '/videos/robotic-joint-motion.mp4',
-    tags: ['Fusion 360', 'Robotics', 'Automation'],
     software: ['Fusion 360', 'Arduino IDE'],
-    specifications: {
-      'Axes': '3 (Pitch, Yaw, Roll)',
-      'Payload': '5 kg',
-      'Reach': '500 mm',
-      'Control': 'Servo-driven'
-    },
     gallery: {
       images: [
         '/images/robotic-joint-1.jpg',
@@ -200,16 +157,8 @@ export const projects: Project[] = [
     title: 'Custom Valve Body',
     category: 'Mechanical Part',
     description: 'High-flow valve body for industrial applications',
-    longDescription: 'The custom valve body is designed for high-flow applications in industrial settings. It features precise machining and the ability to withstand high pressures and temperatures.',
     image: '/images/valve-body.jpg',
-    tags: ['AutoCAD', 'Fluid Systems', 'Industrial'],
     software: ['AutoCAD', 'ANSYS'],
-    specifications: {
-      'Connection Type': 'Flanged',
-      'Size': '150 mm',
-      'Pressure Class': 'PN16',
-      'Material': 'Ductile Iron'
-    },
     gallery: {
       images: [
         '/images/valve-body-1.jpg',

@@ -106,14 +106,6 @@ const Projects = () => {
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs text-gray-300 bg-gray-800 px-2 py-1 rounded"
-                    >
-                      {tag}
-                    </span>
-                  ))}
                 </div>
                 
                 <Link
@@ -130,12 +122,6 @@ const Projects = () => {
         {/* View All Projects with Apple-style Slide to Unlock Animation */}
         <div className="text-center mt-16">
           <div className="relative inline-block">
-            <div 
-              className="slide-to-unlock-text text-3xl md:text-4xl font-bold text-[#c4ff0d] cursor-pointer hover:brightness-125 transition-all duration-300"
-            >
-              View All Projects
-            </div>
-            <ChevronRight className="inline-block ml-2 text-[#c4ff0d] animate-pulse" size={32} />
           </div>
         </div>
 
