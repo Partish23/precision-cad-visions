@@ -18,8 +18,8 @@ const Projects = () => {
       
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#c4ff0d] opacity-5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-green-400 opacity-5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#c4ff0d] opacity-15 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-green-400 opacity-15 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10 pt-24 pb-16 px-6">
@@ -129,6 +129,18 @@ const Projects = () => {
             ))}
           </div>
 
+          {/* View All Projects with Apple-style Slide to Unlock Animation */}
+          <div className="text-center mt-16">
+            <div className="relative inline-block">
+              <div 
+                className="slide-to-unlock-text text-3xl md:text-4xl font-bold text-[#c4ff0d] cursor-pointer hover:brightness-125 transition-all duration-300"
+              >
+                View All Projects
+              </div>
+              <ChevronRight className="inline-block ml-2 text-[#c4ff0d] animate-pulse" size={32} />
+            </div>
+          </div>
+
           {/* No Projects Message */}
           {filteredProjects.length === 0 && (
             <div className="text-center py-20">
@@ -139,6 +151,53 @@ const Projects = () => {
           )}
         </div>
       </div>
+
+      {/* Apple-style Slide to Unlock CSS Animation */}
+      <style jsx>{`
+        .slide-to-unlock-text {
+          position: relative;
+          background: linear-gradient(90deg, 
+            #c4ff0d 0%, 
+            #c4ff0d 40%, 
+            rgba(196, 255, 13, 0.8) 50%, 
+            rgba(196, 255, 13, 1) 55%, 
+            rgba(255, 255, 255, 0.9) 60%, 
+            rgba(196, 255, 13, 1) 65%, 
+            rgba(196, 255, 13, 0.8) 70%, 
+            #c4ff0d 100%
+          );
+          background-size: 200% 100%;
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: slideToUnlock 3s ease-in-out infinite;
+        }
+
+        .slide-to-unlock-text:hover {
+          animation-duration: 2s;
+          filter: brightness(1.3);
+        }
+
+        @keyframes slideToUnlock {
+          0% {
+            background-position: -200% 0;
+          }
+          50% {
+            background-position: 200% 0;
+          }
+          100% {
+            background-position: -200% 0;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .slide-to-unlock-text {
+            animation: none;
+            background: #c4ff0d;
+            -webkit-text-fill-color: #c4ff0d;
+          }
+        }
+      `}</style>
     </div>
   );
 };
