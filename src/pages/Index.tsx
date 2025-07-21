@@ -40,17 +40,17 @@ const Index = () => {
         <div className="max-w-6xl mx-auto text-center">
           {/* Main Name - Reduced by 25% */}
           <h1 className="fade-in-element opacity-0 translate-y-8 transition-all duration-700 text-5xl md:text-6xl font-bold mb-4 tracking-tight">
-            PARTISH PEDNEKAR
+            PARTISH<span className="ml-[5%]">PEDNEKAR</span>
           </h1>
           
           {/* Role */}
-          <p className="fade-in-element opacity-0 translate-y-8 transition-all duration-700 text-xl md:text-2xl text-gray-300 mb-8 font-light" style={{ animationDelay: '0.1s' }}>
+          <p className="fade-in-element opacity-0 translate-y-8 transition-all duration-700 text-xl md:text-2xl text-gray-300 mb-12 font-light" style={{ animationDelay: '0.1s' }}>
             Mechanical Design Engineer
           </p>
           
           {/* Main Tagline */}
           <h2 className="fade-in-element opacity-0 translate-y-8 transition-all duration-700 text-3xl md:text-5xl font-bold mb-6 leading-tight" style={{ animationDelay: '0.2s' }}>
-            Precision Engineering<br />
+            <span className="text-[#c4ff0d]">Precision Engineering</span><br />
             <span className="text-[#c4ff0d]">Made Visual</span>
           </h2>
           
