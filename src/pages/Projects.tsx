@@ -12,11 +12,11 @@ const Projects = () => {
   const filteredProjects = getProjectsByCategory(activeFilter);
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen text-white">
       <Navigation />
       
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#101725] via-gray-900 to-[#101725]">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#c4ff0d] opacity-15 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-green-400 opacity-15 rounded-full blur-3xl"></div>
       </div>

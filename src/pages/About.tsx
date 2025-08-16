@@ -25,11 +25,11 @@ const About = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen text-white">
       <Navigation />
       
       {/* Background with reduced glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#101725] via-gray-900 to-[#101725]">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#c4ff0d] opacity-[0.15] rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-green-400 opacity-[0.15] rounded-full blur-3xl"></div>
         <div className="absolute top-1/2 right-1/3 w-48 h-48 bg-[#c4ff0d] opacity-[0.15] rounded-full blur-2xl"></div>

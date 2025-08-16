@@ -1,8 +1,8 @@
-
 import React, { useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { projects } from '../lib/projects';
 
 const Index = () => {
   useEffect(() => {
@@ -23,8 +23,10 @@ const Index = () => {
     return () => observer.disconnect();
   }, []);
 
+  const featuredProjects = projects.slice(0, 3);
+
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-[#000000] text-white relative overflow-hidden">
       {/* Navigation */}
       <Navigation />
       
@@ -85,22 +87,19 @@ const Index = () => {
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="fade-in-element opacity-0 translate-y-8 transition-all duration-700 group relative bg-gray-900 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300" style={{ animationDelay: `${0.7 + i * 0.1}s` }}>
+            {featuredProjects.map((project, i) => (
+              <Link to={`/project/${project.id}`} key={project.id} className="fade-in-element opacity-0 translate-y-8 transition-all duration-700 group relative bg-gray-900 rounded-lg overflow-hidden hover:transform hover:scale-105" style={{ animationDelay: `${0.7 + i * 0.1}s` }}>
                 <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                  <div className="w-16 h-16 border-2 border-[#c4ff0d] rounded-lg flex items-center justify-center">
-                    <span className="text-[#c4ff0d] font-bold">CAD</span>
-                  </div>
+                  <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-xl font-semibold mb-2">Project {i}</h4>
-                  <p className="text-gray-400 text-sm mb-4">Mechanical Assembly Design</p>
+                  <h4 className="text-xl font-semibold mb-2">{project.title}</h4>
+                  <p className="text-gray-400 text-sm mb-4">{project.category}</p>
                   <div className="flex items-center text-[#c4ff0d] text-sm group-hover:gap-2 transition-all">
                     View Details <ChevronRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#c4ff0d] rounded-lg transition-colors"></div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

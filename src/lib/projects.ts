@@ -4,181 +4,244 @@ export interface Project {
   category: string;
   description: string;
   image: string;
-  video?: string;
   software: string[];
   gallery?: {
     images?: string[];
-    videos?: string[];
     drafting?: string[];
-    '3d-views'?: string[];
   };
 }
 
 export const projects: Project[] = [
-  {
+    {
     id: 1,
-    title: 'Industrial Gear Assembly',
+    title: 'Swivel Bearing Design',
     category: 'Mechanical Assembly',
-    description: 'Complete gear train assembly with precision tolerances',
-    image: '/images/Picture7.png',
-    video: '/videos/gear-assembly-demo.mp4',
-    software: ['SolidWorks', 'AutoCAD', 'ANSYS'],
+    description: 'Bearing housing design to allow rotational movement while supporting axial and radial loads in machinery',
+    image: '/images/sb-6.jpg',
+    software: ['Fusion 360'],
     gallery: {
       images: [
-        '/images/Picture7.png',
-        '/images/Picture7.png',
-        '/images/Picture7.png'
-      ],
-      '3d-views': [
-        '/3d-views/gear-assembly-view1.png',
-        '/3d-views/gear-assembly-view2.png',
-        '/3d-views/gear-assembly-view3.png'
+        '/images/swivel-bearing/sb-1.png',
+        '/images/swivel-bearing/sb-2.jpg',
+        '/images/swivel-bearing/sb-3.jpg',
+        '/images/swivel-bearing/sb-4.jpg',
+        '/images/swivel-bearing/sb-5.jpg',
+        '/images/swivel-bearing/sb-6.jpg'
       ],
       drafting: [
-        '/drafting/gear-assembly-drawing.pdf',
-        '/drafting/gear-assembly-specs.pdf'
+        '/images/swivel-bearing/sbd-1.jpg'
       ],
-      videos: [
-        '/videos/CH-ASSEMBLY.mp4',
-        '/videos/gear-assembly-animation.mp4'
-      ]
     }
   },
   {
     id: 2,
-    title: 'Hydraulic Cylinder Design',
-    category: 'Mechanical Part',
-    description: 'High-pressure hydraulic cylinder with custom sealing',
-    image: '/images/hydraulic-cylinder.jpg',
-    video: '/videos/hydraulic-cylinder-test.mp4',
-    software: ['AutoCAD', 'ANSYS'],
+    title: 'Lamborghini Alloy Design',
+    category: 'Mechanical Assembly',
+    description: 'Custom-designed Lamborghini alloy wheel, modeled and rendered in Fusion 360. The design is a multi-spoke forged style—modern, lightweight, and performance-oriented—commonly found on Lamborghini models like the Huracán EVO or Aventador SVJ.',
+    image: '/images/a-6.png',
+    software: ['Fusion 360'],
     gallery: {
       images: [
-        '/images/Picture6.png',
-        '/images/hydraulic-cylinder-2.jpg',
-        '/images/hydraulic-cylinder-components.jpg'
-      ],
-      '3d-views': [
-        '/3d-views/hydraulic-cylinder-view1.png',
-        '/3d-views/hydraulic-cylinder-view2.png'
+        '/images/lambo-alloy/a-1.png',
+        '/images/lambo-alloy/a-2.jpg',
+        '/images/lambo-alloy/a-3.jpg',
+        '/images/lambo-alloy/a-4.jpg',
+        '/images/lambo-alloy/a-6.png',
       ],
       drafting: [
-        '/drafting/hydraulic-cylinder-drawing.pdf',
-        '/drafting/hydraulic-cylinder-assembly.pdf'
+        'public/images/lambo-alloy/ALLOYS Drawing v1_page-0001.jpg'
       ],
-      videos: [
-        '/videos/hydraulic-cylinder-test.mp4'
-      ]
     }
   },
   {
     id: 3,
-    title: 'Automotive Suspension System',
+    title: 'Lamborghini Brake Design',
     category: 'Mechanical Assembly',
-    description: 'Independent suspension system for performance vehicles',
-    image: '/images/suspension-system.jpg',
-    video: '/videos/suspension-dynamics.mp4',
-    software: ['Fusion 360', 'MATLAB'],
+    description: 'Here’s a high-detail disc brake assembly inspired by Lamborghini, Modeled and Rendered entirely in Fusion 360.',
+    image: '/images/d-1.png',
+    software: ['Fusion 360'],
     gallery: {
       images: [
-        '/images/suspension-system-1.jpg',
-        '/images/suspension-system-2.jpg',
-        '/images/suspension-components.jpg'
-      ],
-      '3d-views': [
-        '/3d-views/suspension-view1.png',
-        '/3d-views/suspension-view2.png',
-        '/3d-views/suspension-view3.png'
+        '/images/lambo-brakes/d-1.jpg',
+        '/images/lambo-brakes/d-2.jpg',
+        '/images/lambo-brakes/d-3.jpg',
+        '/images/lambo-brakes/d-4.jpg',  
+        '/images/lambo-brakes/d-5.jpg'
       ],
       drafting: [
-        '/drafting/suspension-assembly.pdf',
-        '/drafting/suspension-parts.pdf'
-      ],
-      videos: [
-        '/videos/suspension-dynamics.mp4',
-        '/videos/suspension-testing.mp4'
+        '/images/lambo-brakes/d-1.jpg',
       ]
     }
   },
   {
     id: 4,
-    title: 'Precision Bearing Housing',
-    category: 'Mechanical Part',
-    description: 'Custom bearing housing with integrated lubrication system',
-    image: '/images/bearing-housing.jpg',
-    software: ['SolidWorks', 'AutoCAD'],
+    title: 'Crane Hook Design',
+    category: 'Mechanical Assembly',
+    description: 'Lifting component for securely holding slings or ropes during heavy load handling',
+    image: '/images/ch-4.jpg',
+    software: ['Fusion 360'],
     gallery: {
       images: [
-        '/images/bearing-housing-1.jpg',
-        '/images/bearing-housing-2.jpg',
-        '/images/bearing-housing-machined.jpg'
-      ],
-      '3d-views': [
-        '/3d-views/bearing-housing-view1.png',
-        '/3d-views/bearing-housing-view2.png'
+        '/images/crane-hook/ch-1.png',
+        '/images/crane-hook/ch-2.jpg',
+        '/images/crane-hook/ch-3.jpg',
+        '/images/crane-hook/ch-4.jpg'
       ],
       drafting: [
-        '/drafting/bearing-housing-drawing.pdf',
-        '/drafting/bearing-housing-tolerances.pdf'
-      ]
+        'public/images/crane-hook/CH ASSEMBLY Drawing v1_page-0001.jpg',
+      ],
     }
   },
   {
     id: 5,
-    title: 'Robotic Arm Joint',
+    title: 'Stuffing Box Design',
     category: 'Mechanical Assembly',
-    description: 'Multi-axis robotic joint with servo integration',
-    image: '/images/robotic-joint.jpg',
-    video: '/videos/robotic-joint-motion.mp4',
-    software: ['Fusion 360', 'Arduino IDE'],
+    description: 'Sealing component used to prevent leakage around a moving shaft in pumps and marine applications',
+    image: '/images/sb-1.png',
+    software: ['Fusion 360'],
     gallery: {
       images: [
-        '/images/robotic-joint-1.jpg',
-        '/images/robotic-joint-2.jpg',
-        '/images/robotic-joint-servo.jpg'
-      ],
-      '3d-views': [
-        '/3d-views/robotic-joint-view1.png',
-        '/3d-views/robotic-joint-view2.png',
-        '/3d-views/robotic-joint-exploded.png'
+        '/images/stuff-box/sb-1.png',
+        '/images/stuff-box/sb-2.png',
       ],
       drafting: [
-        '/drafting/robotic-joint-assembly.pdf',
-        '/drafting/robotic-joint-wiring.pdf'
+        '/images/stuff-box/STUFFING BOX ASSEMBLY Drawing v1_page-0001.jpg',
       ],
-      videos: [
-        '/videos/robotic-joint-motion.mp4',
-        '/videos/robotic-joint-demo.mp4'
-      ]
     }
   },
   {
     id: 6,
-    title: 'Custom Valve Body',
-    category: 'Mechanical Part',
-    description: 'High-flow valve body for industrial applications',
-    image: '/images/valve-body.jpg',
-    software: ['AutoCAD', 'ANSYS'],
+    title: 'Shock Assembly Design',
+    category: 'Mechanical Assembly',
+    description: 'Absorbs and dampens impact forces in mechanical systems for smoother operations',
+    image: '/images/sh-1.png',
+    software: ['Fusion 360'],
     gallery: {
       images: [
-        '/images/valve-body-1.jpg',
-        '/images/valve-body-2.jpg',
-        '/images/valve-body-flow-test.jpg'
-      ],
-      '3d-views': [
-        '/3d-views/valve-body-view1.png',
-        '/3d-views/valve-body-view2.png'
+        '/images/shock-ass/sh-1.png',
+        '/images/shock-ass/sh-2.png',
+        '/images/shock-ass/sh-3.png',
       ],
       drafting: [
-        '/drafting/valve-body-drawing.pdf',
-        '/drafting/valve-body-flow-analysis.pdf'
+        '/images/shock-ass/ASSEMBLY Drawing v3_page-0001.jpg',
       ]
     }
-  }
+  },
+  {
+    id: 7,
+    title: 'Steam Engine Design',
+    category: 'Mechanical Assembly',
+    description: 'Mechanical engine model convering steam energy into reciprocating motion',
+    image: '/images/se-1.png',
+    software: ['Fusion 360'],
+    gallery: {
+      images: [
+        '/images/steam-eng/se-1.png',
+        '/images/steam-eng/se-2.png',
+      ],
+      drafting: [
+        '/images/steam-eng/STEAM ENGINE CROSSHEAD ASSEMBLY v3_page-0001.jpg',
+      ],
+    }
+  },
+  {
+    id: 8,
+    title: 'Tail Stock Design',
+    category: 'Mechanical Assembly',
+    description: 'Lathe component supporting the free end of workpieces during machining',
+    image: '/images/ts-3.jpg',
+    software: ['Fusion 360'],
+    gallery: {
+      images: [
+        '/images/tail-stock/ts-1.png',
+        '/images/tail-stock/ts-2.jpg',
+        '/images/tail-stock/ts-3.jpg',
+      ],
+      drafting: [
+        '/images/tail-stock/TailStock Assembly Drawing v2_page-0001.jpg',
+      ]
+    }
+  },
+  {
+    id: 9,
+    title: 'Screw Jack Design',
+    category: 'Mechanical Assembly',
+    description: 'Mechanical lifting device using a screw mechanism to raise or lower heave loads',
+    image: '/images/sj-1.jpg',
+    software: ['Fusion 360'],
+    gallery: {
+      images: [
+        '/images/screw-jack/sj-1.jpg',
+        '/images/screw-jack/sj-2.jpg',
+        '/images/screw-jack/sj-3.png',
+        '/images/screw-jack/sj-4.png'
+      ],
+      drafting: [
+        '/images/screw-jack/SCREW JACK ASSEMBLY DRAFTING v4_page-0001.jpg',
+        '/images/screw-jack/sj-dr_page-0001.jpg'
+      ]
+    }
+  },
+  {
+    id: 10,
+    title: 'Non-Return Valve Design',
+    category: 'Mechanical Assembly',
+    description: 'Valve that permits fluid flow in one direction while preventing backflow',
+    image: '/images/v-4.jpg',
+    software: ['Fusion 360'],
+    gallery: {
+      images: [
+        '/images/valve/v-1.png',
+        '/images/valve/v-2.png',
+        '/images/valve/v-3.jpg',
+        '/images/valve/v-4.jpg',
+        '/images/valve/v-5.png'
+      ],
+      drafting: [
+        '/images/valve/NON RETURN VALVE ASSEMBLY Drawing v3_page-0001.jpg',
+      ]
+    }
+  },
+  {
+    id: 11,
+    title: 'Eccentric Assembly Design',
+    category: 'Mechanical Assembly',
+    description: 'Offset cam mechanism used to convert rotary motion into reciprocating motion',
+    image: '/images/es-3.jpg',
+    software: ['Fusion 360'],
+    gallery: {
+      images: [
+        '/images/eccentric/es-1.png',
+        '/images/eccentric/es-2.jpg',
+        '/images/eccentric/es-3.jpg',
+        '/images/eccentric/es-4.jpg',
+      ],
+      drafting: [
+        '/images/eccentric/ECCENTRIC ASSEMBLY DRAFTING v2_page-0001.jpg',
+      ]
+    }
+  },
+  {
+    id: 12,
+    title: 'Drill Jig Design',
+    category: 'Mechanical Assembly',
+    description: 'Precision Tool guiding drills to ensure accurate hole placement in manufacturing',
+    image: '/images/dj-1.png',
+    software: ['Fusion 360'],
+    gallery: {
+      images: [
+        '/images/drill/dj-1.png',
+        '/images/drill/dj-2.png',
+      ],
+      drafting: [
+        '/images/drill/DRILL JIG ASSEMLY DRAFTING v2_page-0001.jpg',
+      ]
+    }
+  },
 ];
 
-export const getProjectById = (id: number): Project | undefined => {
-  return projects.find(project => project.id === id);
+export const getProjectById = (id: number) => {
+  return projects.find((project) => project.id === id);
 };
 
 export const getProjectsByCategory = (category: string): Project[] => {
